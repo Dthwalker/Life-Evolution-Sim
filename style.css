@@ -1,0 +1,130 @@
+:root {
+    /* Colors */
+    --dark        : rgb(10,10,10);
+    --light       : rgb(240,240,240);
+    --organic     : #58A146;
+    --herbivorous : #A59828;
+    --carnivore   : #871E1E;
+}
+
+.light {
+    box-shadow: 0 0 10px rgba(200,200,200, .2),
+          inset 0 0 10px rgba(200,200,200, .2);
+}
+
+.t-light {
+    text-shadow: 0 0 5px rgba(200,200,200, .5);
+}
+
+html, body {
+    width  : 100%;
+    height : 100%;
+    margin : 0;
+    color  : var(--light);
+    background-color: var(--dark);
+}
+
+body {
+    display: grid;
+    place-content: center;
+    font-family: 'Cascadia Mono', monospace;
+}
+
+.main {
+    display: grid;
+    justify-items: center;
+    padding: 20px;
+    outline: 1px solid var(--light);
+}
+
+.title {
+    font-family: 'Pirata One';
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(200,200,200, .5);
+}
+
+.top-nav, .bot-nav {
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto 1fr;
+}
+
+.top-nav { grid-column-gap: 40px; }
+
+.tf {
+    display: flex;
+    align-items: center;
+}
+.gl { justify-self: left; }
+.gl { justify-self: right; }
+
+button {
+    font-size: 16px;
+    font-family: 'Cascadia Mono', monospace;
+    border: 0;
+    background-color: var(--dark);
+    color: var(--light);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(200,200,200, .2),
+          inset 0 0 5px rgba(200,200,200, .2);
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.cell:nth-child(1) { outline: 1px solid var(--light) }
+.cell:nth-child(2) { background-color: var(--organic) }
+.cell:nth-child(3) { background-color: var(--herbivorous) }
+.cell:nth-child(4) { background-color: var(--carnivore) }
+
+.btn-l {
+    padding: 5px 8px;
+    background-color: var(--light);
+    color: var(--dark);
+    border: 0;
+    transition: .3s;
+    outline: 1px solid var(--light);
+    margin-right: 10px;
+}
+
+.btn-l:hover {
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+.mm {
+    outline: 1px solid var(--light);
+    transition: .3s;
+}
+
+.mm:hover {
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+#sim {
+    outline: 1px solid var(--light);
+    margin: 30px 0;
+}
+
+.line {
+    padding-right: 20px;
+    margin-right: 20px;
+    border-right: 1px solid var(--light);
+}
+
+.sb { justify-content: space-between; }
+
+.txt-14 { font-size: 14px }
+.txt-18 { font-size: 18px }
+
+.mb-10 { margin-bottom: 10px }
+.mb-20 { margin-bottom: 20px }
+
+.mr-10 { margin-right: 10px }
+.mr-20 { margin-right: 20px }
