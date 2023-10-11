@@ -16,10 +16,10 @@
         <div class="top-nav">
             <div class="tf gr">
                 <button class="btn-l">Reset</button>
-                <button class="btn-l">Start</button>
+                <button id="start" class="btn-l">Start</button>
                 <button class="btn-l">Spawn</button>
                 <div class="txt-18 mr-10 t-light">Speed:</div>
-                <div>
+                <div id="speed">
                     <button class="mm">-</button>
                     <button class="mm">+</button>
                 </div>
@@ -35,12 +35,12 @@
         <div class="bot-nav">
             <div class="tf line">
                 <div class="txt-18 mr-10 t-light">Count:</div>
-                <div class="mr-20">
+                <div id="sizeWidth" class="mr-20">
                     <div class="txt-14 mb-10 t-light">Width: 0</div>
                     <button class="mm">-</button>
                     <button class="mm">+</button>
                 </div>
-                <div>
+                <div id="sizeHeight">
                     <div class="txt-14 mb-10 t-light">Height: 0</div>
                     <button class="mm">-</button>
                     <button class="mm">+</button>
@@ -49,7 +49,7 @@
             <div class="tf sb">
                 <div class="tf mr-20">
                     <div class="txt-18 mr-10 t-light">Zoom:</div>
-                    <div>
+                    <div id="zoom">
                         <button class="mm">-</button>
                         <button class="mm">+</button>
                     </div>
@@ -59,5 +59,6 @@
         </div>
     </div>
     
+    <script type="module" src="/js/Main.js"></script>
 </body>
 </html>
