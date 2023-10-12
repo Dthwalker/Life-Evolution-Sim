@@ -3,19 +3,22 @@ import Config from "./Config.js";
 import CellData from "./CellData.js";
 import Controls from "./Controls.js";
 
+
 class Main {
 
     static init() {
         this.config   = new Config();
-        this.canvas   = new Canvas(this.config);
         this.cData    = new CellData(this.config);
+        this.canvas   = new Canvas(this.config, this.cData.data);
         this.loopID   = null;
         this.clock    = 0;
 
-        this.control = new Controls(this.config,
+        this.control = new Controls(this.canvas.canvas,
+                                    this.config,
                                     this.cData.data,
                                     this.loop.bind(this),
-                                    this.canvas.update.bind(this.canvas));
+                                    this.canvas.update.bind(this.canvas),
+                                    this.cData.spawn.bind(this.cData));
         console.log('Sim is ready');
         this.loop();
     }

@@ -1,11 +1,12 @@
 export default class Config {
 
     constructor() {
-        this.width    = 25;
-        this.height   = 15;
-        this.cellSize = 20;
-        this.speed    = 500;
-        this.isStart  = false;
+        this.width      = 25;
+        this.height     = 15;
+        this.cellSize   = 20;
+        this.cellMargin = 4;
+        this.speed      = 500;
+        this.isStart    = false;
         this.color = {
             dark       : 'rgb(10,10,10)',
             light      : 'rgb(240,240,240)',

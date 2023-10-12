@@ -1,14 +1,13 @@
 export default class Canvas {
 
-    constructor(config) {
+    constructor(config, data) {
         this.cnf    = config;
         this.canvas = document.querySelector('#sim');
         this.ctx    = this.canvas.getContext('2d');
         this.w      = null;
         this.h      = null;
         this.cSize  = null;
-
-        this.update();
+        this.data   = data;
     }
 
     resize() {
@@ -27,9 +26,33 @@ export default class Canvas {
         }
     }
 
+    drawCells() {
+        this.data.forEach(arr => arr.forEach(e => {
+            let color
+            switch (e.constructor.name) {
+                case 'Organic':
+                    color = this.cnf.color.organic;
+                    break;
+                case 'Herb':
+                    color = this.cnf.color.herbivorous;
+                    break;
+                case 'Carn':
+                    color = this.cnf.color.carnivore;
+                    break;
+                default:
+                    color = this.cnf.color.dark;
+            }
+
+            e.draw(this.ctx, this.cSize,
+                color,
+                this.cnf.cellMargin);
+        }));
+    }
+
     update() {
         this.resize();
         this.drawLines();
+        this.drawCells();
     }
 
 }
