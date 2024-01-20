@@ -20,13 +20,29 @@ class Main {
                                     this.canvas.update.bind(this.canvas),
                                     this.cData.spawn.bind(this.cData));
         console.log('Sim is ready');
-        this.loop();
+        this.showInfo()
+        this.canvas.sprites.organic.onload = () => {
+            this.canvas.sprites.herb.onload = () => {
+                this.canvas.sprites.carn.onload = () => this.loop()
+            }
+        }
+    }
+
+    static showInfo() {
+        let [o, h, c] = [0, 0, 0];
+        this.cData.data.forEach(a => a.forEach(e => {
+            e.constructor.name == 'Organic' ? o++ :
+            e.constructor.name == 'Herb' ? h++ :
+            e.constructor.name == 'Carn' ? c++ : null
+        }))
+
+        document.querySelector('.info').innerHTML = `Organic: ${o}; Herbivorous: ${h}; Carnivore: ${c}`
     }
 
     static loop() {
         this.canvas.update();
-
-        console.log(this.clock++);
+        this.cData.update();
+        this.showInfo()
         
         if (this.config.isStart) {
             this.loopID = setTimeout(this.loop.bind(this), this.config.speed);

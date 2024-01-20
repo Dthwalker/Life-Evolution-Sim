@@ -128,3 +128,12 @@ button {
 
 .mr-10 { margin-right: 10px }
 .mr-20 { margin-right: 20px }
+
+.info {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    outline: 1px solid var(--light);
+    padding: 10px;
+    width: calc(100% - 40px);
+}
